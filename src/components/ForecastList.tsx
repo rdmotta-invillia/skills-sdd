@@ -1,4 +1,4 @@
-import type { ForecastDay, Unit } from '../types/weather';
+import type { LegacyForecastDay as ForecastDay, Unit } from '../types/weather';
 import ForecastCard from './ForecastCard';
 
 interface ForecastListProps {

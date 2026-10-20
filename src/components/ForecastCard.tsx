@@ -1,4 +1,4 @@
-import type { ForecastDay, Unit } from '../types/weather';
+import type { LegacyForecastDay as ForecastDay, Unit } from '../types/weather';
 import { formatTemperature } from '../lib/temperature';
 import { getWeatherIcon, getWeatherLabel } from '../lib/weatherCodes';
 import { getDayLabel, getShortDate } from '../lib/format';

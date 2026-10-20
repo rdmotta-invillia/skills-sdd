@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import type { City, WeatherData } from '../types/weather';
+import type { LegacyCity as City, LegacyWeatherData as WeatherData } from '../types/weather';
 import { getWeather, searchCities, WeatherServiceError } from '../services/weatherService';
 
 export type WeatherStatus = 'idle' | 'loading' | 'success' | 'error' | 'empty';

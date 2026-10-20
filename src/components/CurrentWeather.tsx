@@ -1,4 +1,8 @@
-import type { CurrentWeather as CurrentWeatherType, City, Unit } from '../types/weather';
+import type {
+  LegacyCurrentWeather as CurrentWeatherType,
+  LegacyCity as City,
+  Unit,
+} from '../types/weather';
 import { formatTemperature } from '../lib/temperature';
 import { getWeatherIcon, getWeatherLabel } from '../lib/weatherCodes';
 

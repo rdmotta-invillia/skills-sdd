@@ -4,7 +4,11 @@ import { describe, it, expect } from 'vitest';
 import { useState } from 'react';
 import UnitToggle from '../../src/components/UnitToggle';
 import CurrentWeather from '../../src/components/CurrentWeather';
-import type { City, CurrentWeather as CurrentWeatherType, Unit } from '../../src/types/weather';
+import type {
+  LegacyCity as City,
+  LegacyCurrentWeather as CurrentWeatherType,
+  Unit,
+} from '../../src/types/weather';
 
 const city: City = {
   id: 1,

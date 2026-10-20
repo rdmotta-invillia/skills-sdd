@@ -14,13 +14,45 @@ export interface City {
   name: string;
   country: string;
   /** Estado/região, quando disponível (ajuda a desambiguar homônimos). */
-  admin1?: string;
+  region?: string;
   latitude: number;
   longitude: number;
 }
 
 /** Condições atuais. Temperatura sempre em °C. */
 export interface CurrentWeather {
+  observedAt: string;
+  temperatureC: number | null;
+  weatherCode: number | null;
+  humidityPercent: number | null;
+  windSpeedKmh: number | null;
+  pressureHpa: number | null;
+  precipitationMm: number | null;
+}
+
+/** Um dia da previsão. Temperaturas sempre em °C. */
+export interface ForecastDay {
+  date: string;
+  temperatureMinC: number | null;
+  temperatureMaxC: number | null;
+  weatherCode: number | null;
+  precipitationTotalMm: number | null;
+  windSpeedMaxKmh: number | null;
+}
+
+/** Agregado entregue à UI: cidade + clima atual + 5 dias de previsão. */
+export interface WeatherData {
+  city: City;
+  timezone: string;
+  current: CurrentWeather;
+  forecast: ForecastDay[];
+}
+
+export interface LegacyCity extends City {
+  admin1?: string;
+}
+
+export interface LegacyCurrentWeather {
   temperature: number;
   weatherCode: number;
   humidity: number;
@@ -30,8 +62,7 @@ export interface CurrentWeather {
   time: string;
 }
 
-/** Um dia da previsão. Temperaturas sempre em °C. */
-export interface ForecastDay {
+export interface LegacyForecastDay {
   date: string;
   min: number;
   max: number;
@@ -39,9 +70,8 @@ export interface ForecastDay {
   precipitationProbability: number;
 }
 
-/** Agregado entregue à UI: cidade + clima atual + 5 dias de previsão. */
-export interface WeatherData {
-  city: City;
-  current: CurrentWeather;
-  forecast: ForecastDay[];
+export interface LegacyWeatherData {
+  city: LegacyCity;
+  current: LegacyCurrentWeather;
+  forecast: LegacyForecastDay[];
 }

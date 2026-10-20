@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { searchCities, getWeather, WeatherServiceError } from '../../src/services/weatherService';
-import type { City } from '../../src/types/weather';
+import type { LegacyCity as City } from '../../src/types/weather';
 
 const CITY: City = {
   id: 1,
